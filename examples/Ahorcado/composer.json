@@ -1,15 +1,18 @@
 {
     "autoload": {
         "psr-4": {
-            "GH\\": "src/",
-            "Tests\\": "tests/"
+            "GlobalHitss\\": "src/",
+            "Tests\\": "tests/",
+            "BehatContexts\\": "features/bootstrap/"
         }
     },
-    "require": {
+    "require-dev": {
         "phpunit/phpunit": "*",
         "behat/behat": "*",
         "behat/mink-extension": "*",
-        "behat/mink-goutte-driver": "*",
+        "behat/mink-goutte-driver": "*"
+    },
+    "require": {
         "slim/slim": "*",
         "slim/psr7": "*"
     }
