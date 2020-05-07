@@ -1,5 +1,6 @@
 <?php
 
+use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
@@ -9,6 +10,8 @@ use Behat\Gherkin\Node\TableNode;
  */
 class InternalsFeatureContext implements Context
 {
+   
+
     /**
      * Initializes context.
      *
@@ -19,4 +22,5 @@ class InternalsFeatureContext implements Context
     public function __construct()
     {
     }
+    
 }
