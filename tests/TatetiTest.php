@@ -73,8 +73,8 @@ final class TatetiTest extends \PHPUnit\Framework\TestCase {
 		$this->tateti->jugar(0,1,'X');
 		$this->tateti->jugar(1,0,'O');
 		$this->tateti->jugar(0,2,'X');
-		$this->assertFalse($this->tateti->ganoEnColumna(0));
-        $this->assertEquals($this->tateti->ganoEnFila(0), 'player1');
+		$this->assertFalse($this->tateti->ganoEnColumna(0, 'player1'));
+        $this->assertTrue($this->tateti->ganoEnFila(0, 'player1'));
     }  
 
     public function test08VerificarQueGanaEnColumna() {
@@ -85,7 +85,8 @@ final class TatetiTest extends \PHPUnit\Framework\TestCase {
 		$this->tateti->jugar(1,0,'O');
 		$this->tateti->jugar(0,2,'X');
 		$this->tateti->jugar(2,0,'O');
-        $this->assertEquals($this->tateti->ganoEnColumna(0), 'player2');
+		$this->assertFalse($this->tateti->ganoEnFila(0, 'player1'));
+        $this->assertTrue($this->tateti->ganoEnColumna(0,'player2'));
     }
 
     public function test08VerificarQueGanaEnDiagonal() {
@@ -95,6 +96,6 @@ final class TatetiTest extends \PHPUnit\Framework\TestCase {
 		$this->tateti->jugar(1,1,'X');
 		$this->tateti->jugar(0,2,'O');
 		$this->tateti->jugar(2,2,'X');
-        $this->assertEquals($this->tateti->ganoEnDiagonal(0), 'player1');
+        $this->assertTrue($this->tateti->ganoEnDiagonal('player1'));
     }
 }
