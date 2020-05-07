@@ -42,27 +42,27 @@ class Tateti {
  		return ($this->tablero[$x][$y] != '_');
  	}
 
- 	public function ganoEnFila($fila) {
+ 	public function ganoEnFila($fila, $jugador) {
  		if (in_array($this->tablero[$fila][0],self::SIMBOLOS_PERMITIDOS) && $this->tablero[$fila][0] == $this->tablero[$fila][1] && $this->tablero[$fila][1] == $this->tablero[$fila][2]) {
-			return self::JUGADOR[$this->tablero[$fila][0]];
+			return self::JUGADOR[$this->tablero[$fila][0]] == $jugador;
 		}
 		return false;
  	}
 
- 	public function ganoEnColumna($columna) {
+ 	public function ganoEnColumna($columna, $jugador) {
  		if (in_array($this->tablero[0][$columna],self::SIMBOLOS_PERMITIDOS) && $this->tablero[0][$columna] == $this->tablero[1][$columna] && $this->tablero[1][$columna] == $this->tablero[2][$columna]) {
- 			return self::JUGADOR[$this->tablero[0][$columna]];
+ 			return self::JUGADOR[$this->tablero[0][$columna]] == $jugador;
  		}
  		return false;
  	}
 
- 	public function ganoEnDiagonal() {
+ 	public function ganoEnDiagonal($jugador) {
  		if (in_array($this->tablero[0][0],self::SIMBOLOS_PERMITIDOS) &&  $this->tablero[0][0] == $this->tablero[1][1] && $this->tablero[1][1] == $this->tablero[2][2]) {
- 			return self::JUGADOR[$this->tablero[0][0]];
+ 			return self::JUGADOR[$this->tablero[0][0]] == $jugador;
  		}
 
  		if (in_array($this->tablero[0][2],self::SIMBOLOS_PERMITIDOS) && $this->tablero[0][2] == $this->tablero[1][1] && $this->tablero[1][1] == $this->tablero[2][0]) {
- 			return self::JUGADOR[$this->tablero[0][2]];
+ 			return self::JUGADOR[$this->tablero[0][2]] == $jugador;
  		}
 
  		return false;

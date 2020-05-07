@@ -12,3 +12,8 @@ Acá estan las instrucciones (https://getcomposer.org/download/)
 ## Actualizamos las dependencias
 
     php composer.phar update
+
+
+## Referencia de mink dentro de behat
+
+http://mink.behat.org/en/latest/
